@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基于VUE的购物车优惠活动的实现</title>
+	<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+
+<div class="content" id="Cart">
+    <div class="devideDIV">
+      <span>{{title}}
+        <div class="cartIconDIV"></div>
+      </span>
+    </div>
+    <!-- 余额 提示 -->
+    <div class="cartTop">
+      <div class="countBalance">
+        <span style="color:#FF6347">温馨提示:</span>
+        您的账户余额为:
+        <span style="color:#FF6347;font-size:24px;">￥</span>
+        <span style="font-size:20px;">1000.20</span>
+      </div>
+      <!-- <div class="addressDIV">
+        <span>收货地址管理</span>
+      </div> -->
+    </div>
+    <div style="clear:both;"></div>
+    
+    <!-- 商品列表 -->
+    <div class="cartMain" v-show="productList.length>0">
+      <table id="cartTable">
+        <thead>
+          <tr>
+            <th>
+              <label for="fl select-all">
+                <div class="mycheckbox" :class="{'beChecked':checkAllFlag}" @click="checkAll"></div>
+                <span><a href="javascript:void(0)" class="selallSPAN">&nbsp;全选</a></span>
+              </label>
+            </th>
+            <th>商 品</th>
+            <th>单 价</th>
+            <th>数 量</th>
+            <th>小 计</th>
+            <th>操 作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 商品列表循环 -->
+          <tr class="on" v-for="item in productList">
+            <td class="checkbox">
+              <div class="mycheckbox" v-bind:class="{'beChecked':item.checked}" v-on:click="selecedProduct(item)"></div>
+            </td>
+            <td class="goods">
+              <img v-bind:src="item.productImg" alt=""/>
+              <span><a href="##" class="goodsTitle">{{item.productName}}</a></span><br/>
+              <span>from:</span><br/>
+              <span><a href="##" class="sellerTitle">{{item.shop.shopName}}</a></span>
+            </td>
+            <td class="price">{{item.productPrice | fomatMoney}}</td>
+            <td class="count">
+              <span class="reduce" v-on:click="changeQuentity(item,-1)">-</span>
+              <input type="text" class="count-input" value="1" v-model="item.productQuentity"/>
+              <span class="add" v-on:click="changeQuentity(item,1)">+</span>
+            </td>
+            <td class="subtotal">{{item.productPrice * item.productQuentity| fomatMoney}}</td>
+            <td class="opration">
+              <span class="deleteOne" @click="delProduct(item)">删 除</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- 商品列表底端功能项 -->
+    <div class="cartFooter" id="cartFooter"  v-show="productList.length>0">
+      <div class="selall fl">
+        <label for="fl select-all">
+          <span class="mycheckbox" :class="{'beChecked':checkAllFlag}" @click="checkAll"></span>
+          <span><a href="javascript:void(0)" class="selallSPAN">&nbsp;全选</a></span>
+        </label>
+      </div>
+      <a href="#" id="multiDelete" class="fl delete" @click="delAllChecked">多 选 删 除</a>
+      <a href="#" id="allDelete" class="fl delete" @click="delAll">清 空 购 物 车</a>
+      <div class="fr closing">结 算</div>
+      <div class="fr total">合计:￥<span id="priceTotal">{{totalMoney}}</span></div>
+      <div class="fr selected" id="selected">
+        已选商品
+        <span id="selectedTotal">{{totalQuentity}}</span>件
+        <span class="arrow up">︽</span>
+        <span class="arrow down">︾</span>
+      </div>
+      <div class="selected-view">
+            <div id="selectedViewList" class="clearfix">
+              <!-- 组件 -->
+              <!-- <selected-view></selected-view> -->
+              <!-- <div class="selectedViewBlock">
+                <img src="" alt="">
+                <span class="selCount"></span>
+                <span class="del"></span>
+              </div> -->
+            </div>
+            <span class="arrow">◆<span>◆</span></span>
+      </div>
+    </div>
+    
+    <!-- 无商品 -->
+    <div class="black" v-show="productList.length==0">
+      空空如也～～～
+    </div>
+
+    <!-- 优惠活动细则 -->
+    <div class="payment">
+      <div class="payment-activity" v-for="act in selectedShop">
+        <p>您已享受<span class="tomato">{{act.shopName}}</span></p>
+        <p class="fullActivity">满
+          <span class="tomato">{{act.fill}}</span>减
+          <span class="tomato">{{act.off}}</span>活动
+        </p>
+      </div>
+      <div class="payment-activity"  v-if="totalQuentity>0">
+        <p>邮费：<span class="tomato">{{postMoney | fomatMoney}}</span></p>
+        <p class="freePost">全场满<span class="tomato">2</span>件包邮</p>
+      </div>
+    </div>
+
+</div>
+
+
+</body>
+<script src="js/vue.js"></script>
+<script src="js/vue-resource.js"></script>
+<script src="js/cart.js"></script>
+</html>

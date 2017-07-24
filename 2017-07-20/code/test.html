@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<div>脚本测试html</div>
+	<div>console输出</div>
+</body>
+<script>
+//使用for循环依次打印出0-9
+//1.使用var
+var funcs=[];
+for (var i = 0; i < 10; i++){
+  funcs.push(function(){console.log(i);});
+}
+funcs.forEach(function(func){ func(); }); //输出“10”十次
+//2.使用var+IIFE
+var funcs2=[];
+for (var j = 0; j < 10; j++){
+  funcs2.push((function(val){
+    return function(){
+      console.log(val);
+    }
+  }(j)));
+}
+funcs2.forEach(function(func){ func(); }); //输出0-9
+//3.使用let声明循环变量
+var funcs3=[];
+for (let i = 0; i < 10; i++){
+  funcs3.push(function(){console.log(i);});
+}
+funcs3.forEach(function(func){ func(); }); //输出0-9
+</script>
+</html>

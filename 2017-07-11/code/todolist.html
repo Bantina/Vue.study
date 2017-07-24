@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TodoList</title>
+	<link rel="stylesheet" href="css/todoList.css">
+</head>
+<body>
+  <div class="todoList">
+    <h1>{{ msg }}</h1>
+    <div class="header">
+      <input class="userAdd" type="text" v-model="newItem" v-on:keyup.enter="addItem" placeholder="What needs to be done?"/>
+    </div>
+    
+    <section class="main">
+      <p v-show="errorMsg" class="errorMsg">{{errorMsg}}</p>
+      <button v-on:click="addItem" class="funcAdd"> Add </button>
+      <!-- 待办事项 -->
+      <div class="undo">
+        <div class="undoBlock"  v-show="!(doLists=='')">
+          <div class="undoTitle">待办事项</div>
+          <ul class="undoList">
+              <li v-for="(item, index) in doLists">
+                <!-- 自定义 checkbox -->
+                <div class="checkbox" v-bind:class="item.checked ? 'beChecked' : ''" v-on:click="undoCountF(item)"></div><span class="checkbox_text">{{item.name}}</span>
+                <button v-on:click="delUndo(index)" class="func_del"> Delete </button>
+              </li>
+          </ul>
+          <div class="undoFooter">
+            <span class="count"> <span class="tomato">{{doLists.length}}</span> 条记录</span>
+            <button v-on:click="delAll(true)" class="func"> 删除 所有 待办项</button>
+          </div>
+        </div>
+      </div>
+      <!-- 已完成事项 -->
+      <div class="done">
+        <div class="doneBlock"  v-show="!(doneLists=='')">
+          <div class="doneTitle">已完成事项</div>
+          <ul class="doneList">
+              <li v-for="(item, index) in doneLists">
+                <!-- 自定义 checkbox -->
+                <div class="checkbox" v-bind:class="item.checked ? 'beChecked' : ''" v-on:click="doneCountF(item)"></div>
+                <span class="checkbox_text" v-bind:class="item.checked ? 'beChecked_text' : ''">{{item.name}}</span>
+                <button v-on:click="delDone(index)" class="func_del"> Delete </button>
+              </li>
+          </ul>
+          <div class="doneFooter">
+            <span class="count"><span class="tomato">{{doneLists.length}}</span> 条记录</span>
+            <button v-on:click="delAll(false)" class="func"> 删除 所有 已完成项</button>
+          </div>
+        </div>
+      </div>
+      <div style="clear:both"></div>
+    </section>
+
+  </div>
+</body>
+<script src="js/vue.js"></script>
+<script src="js/todoList.js"></script>
+</html>

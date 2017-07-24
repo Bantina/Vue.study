@@ -1,0 +1,23 @@
+#menu{
+	padding: 100px 50px;
+}
+.menu_ul{
+	width:20%;
+	float: left;
+}
+.menu_ul li{
+	height: 35px;
+	line-height: 35px;
+	list-style-type: none;
+}
+.menu_ul li a:hover{
+	color: tomato;
+}
+.content{
+	width:50%;
+	height: 200px;
+	padding:80px 100px;
+	float: left;
+	/*color: tomato;*/
+	border:solid 1px #eee;
+}

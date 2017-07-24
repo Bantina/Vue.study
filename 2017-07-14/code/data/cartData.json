@@ -1,0 +1,123 @@
+{
+    "status": 1,
+    "result": {
+      "list": [{
+        "productId": "10001",
+        "productName": "Artka连衣裙",
+        "productPrice": "50",
+        "productQuentity": "1",
+        "productImg": "http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg",
+        "shop": {
+          "shopName": "商家aaaaa",
+          "activity": [{
+            "fill": 100,
+            "off": 20
+          }, {
+            "fill": 200,
+            "off": 50
+          }, {
+            "fill": 300,
+            "off": 100
+          }],
+          "freePost": {
+            "status": -1,
+            "postPrice": 5
+          }
+        }
+      }, {
+        "productId": "10002",
+        "productName": "新品阔腿七分裤",
+        "productPrice": "100",
+        "productQuentity": "2",
+        "productImg": "http://ww1.sinaimg.cn/mw690/005Tivpbjw1f4huqtcllzj30go0gogmm.jpg",
+        "shop": {
+          "shopName": "商家bb",
+          "activity": [{
+            "fill": 100,
+            "off": 20
+          }, {
+            "fill": 200,
+            "off": 50
+          }, {
+            "fill": 300,
+            "off": 100
+          }],
+          "freePost": {
+            "status": 0
+          }
+        }
+      }, {
+        "productId": "10003",
+        "productName": "Artka连衣裙2",
+        "productPrice": "60",
+        "productQuentity": "1",
+        "productImg": "http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg",
+        "shop": {
+          "shopName": "商家ccc",
+          "activity": [{
+            "fill": 100,
+            "off": 20
+          }, {
+            "fill": 200,
+            "off": 50
+          }, {
+            "fill": 300,
+            "off": 100
+          }],
+          "freePost": {
+            "status": 1,
+            "postPrice": 10,
+            "quentity": 2
+          }
+        }
+      }, {
+        "productId": "10004",
+        "productName": "A连衣裙3333",
+        "productPrice": "30",
+        "productQuentity": "1",
+        "productImg": "http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg",
+        "shop": {
+          "shopName": "商家ddd",
+          "activity": [{
+            "fill": 100,
+            "off": 20
+          }, {
+            "fill": 200,
+            "off": 50
+          }, {
+            "fill": 300,
+            "off": 100
+          }],
+          "freePost": {
+            "status": 2,
+            "postPrice": 10,
+            "upMoney": 200
+          }
+        }
+      }, {
+        "productId": "10005",
+        "productName": "Artka连衣裙fdsa",
+        "productPrice": "50",
+        "productQuentity": "1",
+        "productImg": "http://ww1.sinaimg.cn/mw690/005Tivpbjw1f4huqtcllzj30go0gogmm.jpg",
+        "shop": {
+          "shopName": "商家aaaaa",
+          "activity": [{
+            "fill": 100,
+            "off": 20
+          }, {
+            "fill": 200,
+            "off": 50
+          }, {
+            "fill": 300,
+            "off": 100
+          }],
+          "freePost": {
+            "status": -1,
+            "postPrice": 5
+          }
+        }
+      }]
+    },
+    "message": ""
+  }

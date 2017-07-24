@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vuelist</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">  
+	<link rel="stylesheet" type="text/css" href="css/main.css">	
+</head>
+<body>
+	
+	<div id="app">
+
+		<div class="appLeft">
+			<div class="portrait">
+				<div class="portrait-blank">
+					<img src="img/portrait0.jpg" alt="">
+				</div>
+			</div>
+			<div class="nickname">{{ nickname }}</div>
+			<ul class="menu_ul">
+				<li v-for="(list,index) in menuLists"  v-on:click="changeIndex(index)" :class="{menuActive: menuActive == index}"><a href="###">{{ list.title }}</a></li>
+				<li>
+					<router-link to="/home">home</router-link>
+					<router-link to="/about">about</router-link>
+				</li>
+			</ul>
+			
+		</div>
+		<div class="appRight">
+			<div class="appRight-title">{{ content }}</div>
+			<div class="appRight-content">
+				<content-component v-for="(list,index) in articleLists" :list="list" :articleLists="articleLists" :index="index"></content-component>
+				<router-view></router-view> 
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script type="text/javascript" src="js/vue-router.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

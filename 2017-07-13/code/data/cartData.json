@@ -1,0 +1,53 @@
+{
+	"status":1,
+	"result":{
+		"list":[
+			{
+				"productId":"10001",
+				"productName":"Artka连衣裙",
+				"productPrice":"298",
+				"productQuentity":"1",
+				"productImg":"http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg",
+				"productShop":"商家aaaaa",
+				"parts":[
+					{
+						"partsId":"20001",
+						"partsName":"伞"
+					}
+				]
+
+			},
+			{
+				"productId":"10002",
+				"productName":"新品阔腿七分裤",
+				"productPrice":"199",
+				"productQuentity":"1",
+				"productImg":"http://ww1.sinaimg.cn/mw690/005Tivpbjw1f4huqtcllzj30go0gogmm.jpg",
+				"productShop":"商家aaaaa",
+				"parts":[
+					{
+						"partsId":"20001",
+						"partsName":"伞"
+					}
+				]
+
+			},
+			{
+				"productId":"10003",
+				"productName":"Artka连衣裙2",
+				"productPrice":"599",
+				"productQuentity":"1",
+				"productImg":"http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg",
+				"productShop":"商家aaaaa",
+				"parts":[
+					{
+						"partsId":"20001",
+						"partsName":"伞"
+					}
+				]
+
+			}
+		]
+	},
+	"message":""
+}

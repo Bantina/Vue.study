@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基于原生js的购物车</title>
+	<link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+	<div class="content">
+		<div class="devideDIV">
+			<span>我 的 购 物 车 (My Shopping Cart)
+				<div class="cartIconDIV"></div>
+			</span>
+		</div>
+		<div class="cartTop">
+			<div class="countBalance">
+				<span style="color:#FF6347">温馨提示:</span>
+				您的账户余额为:
+				<span style="color:#FF6347;font-size:24px;">￥</span>
+				<span style="font-size:20px;">1000.20</span>
+			</div>
+			<!-- <div class="addressDIV">
+				<span>收货地址管理</span>
+			</div> -->
+		</div>
+ 		<div style="clear:both;"></div>
+		
+		<div class="cartMain">
+			<table id="cartTable">
+				<thead>
+					<tr>
+						<th>
+							<label for="fl select-all">
+					<input type="checkbox" class="check-all check"/>
+					<span><a href="javascript:void(0)" class="selallSPAN">&nbsp;全选</a></span>
+							</label>
+						</th>
+						<th>商 品</th>
+						<th>单 价</th>
+						<th>数 量</th>
+						<th>小 计</th>
+						<th>操 作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="on">
+						<td class="checkbox">
+							<input type="checkbox" class="check-one check"/>
+						</td>
+						<td class="goods">
+							<img src="http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg" alt=""/>
+							<span><a href="##" class="goodsTitle">Artka连衣裙</a></span><br/>
+							<span>from:</span><br/>
+							<span><a href="##" class="sellerTitle">商家aaaaa</a></span>
+						</td>
+						<td class="price">200.63</td>
+						<td class="count">
+							<span class="reduce"></span>
+							<input type="text" class="count-input" value="1"/>
+							<span class="add">+</span>
+						</td>
+						<td class="subtotal">200.63</td>
+						<td class="opration">
+							<span class="deleteOne">删 除</span>
+						</td>
+					</tr>
+					<tr class="on">
+						<td class="checkbox">
+							<input type="checkbox" class="check-one check"/>
+						</td>
+						<td class="goods">
+							<img src="http://ww1.sinaimg.cn/mw690/005Tivpbjw1f4huqtcllzj30go0gogmm.jpg" alt=""/>
+							<span><a href="##" class="goodsTitle">新品阔腿七分裤</a></span><br/>
+							<span>from:</span><br/>
+							<span><a href="##" class="sellerTitle">商家aaaaa</a></span>
+						</td>
+						<td class="price">180.00</td>
+						<td class="count">
+							<span class="reduce"></span>
+							<input type="text" class="count-input"  value="1"/>
+							<span class="add">+</span>
+						</td>
+						<td class="subtotal">180.00</td>
+						<td class="opration">
+							<span class="deleteOne">删 除</span>
+						</td>
+					</tr>
+					<tr class="on">
+						<td class="checkbox">
+							<input type="checkbox" class="check-one check"/>
+						</td>
+						<td class="goods">
+							<img src="http://ww2.sinaimg.cn/mw690/005Tivpbjw1f4huqsnuevj30go0goabd.jpg" alt=""/>
+							<span><a href="##" class="goodsTitle">Artka复古连衣裙</a></span><br/>
+							<span>from:</span><br/>
+							<span><a href="##" class="sellerTitle">商家aaaaa</a></span>
+						</td>
+						<td class="price">200.63</td>
+						<td class="count">
+							<span class="reduce"></span>
+							<input type="text" class="count-input"  value="1"/>
+							<span class="add">+</span>
+						</td>
+						<td class="subtotal">200.63</td>
+						<td class="opration">
+								<span class="deleteOne">删 除</span>
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+		</div>
+		<div class="cartFooter" id="cartFooter">
+			<div class="selall fl">
+				<label for="fl select-all">
+					<input type="checkbox" class="check-all check"/>
+					<span><a href="javascript:void(0)" class="selallSPAN">&nbsp;全选</a></span>
+				</label>
+			</div>
+			<a href="#" id="multiDelete" class="fl delete">多 选 删 除</a>
+			<a href="#" id="allDelete" class="fl delete">清 空 购 物 车</a>
+			<div class="fr closing">结 算</div>
+			<div class="fr total">合计:￥<span id="priceTotal">0.00</span></div>
+			<div class="fr selected" id="selected">
+				已选商品
+				<span id="selectedTotal">0</span>件
+				<span class="arrow up">︽查看已选商品</span>
+				<span class="arrow down">︾</span>
+			</div>
+			<div class="selected-view">
+		        <div id="selectedViewList" class="clearfix">
+		            <!-- <div><img src="images/1.jpg"/>
+		            	<span class="selCount">1</span>
+		            	<span class="del">取消选择</span>
+		            </div> -->
+		        </div>
+		        <span class="arrow">◆<span>◆</span></span>
+    		</div>
+		</div>
+	</div>
+
+</body>
+<script src="js/cart_original_js.js"></script>
+</html>
